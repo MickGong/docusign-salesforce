@@ -1,0 +1,6 @@
+<apex:page >
+  <!-- Begin Default Content REMOVE THIS -->
+  <h1>An error has occured</h1>
+    {!$CurrentPage.parameters.errorMessage}
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

@@ -1,0 +1,43 @@
+<apex:page standardStylesheets="false" showHeader="false" action="{!docuSignOnCompletePageOpen}"
+    sidebar="false" standardController="Opportunity" extensions="DocuSignNowController">
+    <apex:stylesheet value="{!URLFOR($Resource.ndaStyles, 'ndastyles.css')}" />
+     <meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1.5;" />
+     <meta name="apple-mobile-web-app-capable" content="yes" />
+     <meta names="apple-mobile-web-app-status-bar-style" content="black" />
+     <link rel="apple-touch-icon" sizes="72x72" href="{!URLFOR($Resource.ndaStyles, 'icon_ipad.png')}" />
+
+    <h1></h1>
+    <p>
+    </p>
+  
+    <apex:form >
+        <table>
+            
+            <tr>
+                <td><h2>Next Signer Name:</h2></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><apex:outputText styleClass="textBox" id="nextRecipientName" value="{!nextRecipientName}"/></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><h2>Email:</h2></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><apex:outputText styleClass="textBox" id="nextRecipientClientUserId" value="{!nextRecipientEmail}" /></td>
+                <td></td>
+            </tr>
+
+        </table>
+
+        <table class="top">
+            <tr>
+                <td class="left"><apex:commandbutton styleClass="greenButton" action="{!startDocuSignEmbeddedNextRecipient}" value="DocuSign Now"/></td>
+            </tr>
+        </table>
+
+  </apex:form>
+
+</apex:page>

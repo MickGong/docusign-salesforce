@@ -1,0 +1,73 @@
+<apex:page standardStylesheets="false" showHeader="false" standardController="Opportunity" extensions="DocuSignNowController">
+     <meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1.5;" />
+     <meta name="apple-mobile-web-app-capable" content="yes" />
+     <meta names="apple-mobile-web-app-status-bar-style" content="black" />
+     <link rel="apple-touch-icon" sizes="72x72" href="{!URLFOR($Resource.ndaStyles, 'icon_ipad.png')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.ndaStyles, 'ndastyles.css')}" />
+
+    <h1>Welcome to DocuSign!</h1>
+    <p>
+        Please ensure the details below are accurate and
+        click DocuSign Now to begin signing.
+    </p>
+
+    <apex:form >
+        <table>
+            <tr>
+                <td><h2>Signer 1 Name</h2></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><apex:inputField styleClass="textBox" value="{!Opportunity.Account.Name}"/></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><h2>Signer 1 Email</h2></td>
+                 <td></td>
+            </tr>
+            <tr>
+                 <td><apex:inputField styleClass="textBox" value="{!Opportunity.Email__c}" /></td>
+                 <td></td>
+            </tr>
+            <tr>
+                <td><h2>Signer 2 Name</h2></td>
+                 <td></td>
+            </tr>
+            <tr>
+                <td><apex:inputField styleClass="textBox" value="{!Opportunity.Applicant_2_Name__c}"/></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><h2>Signer 2 Email</h2></td>
+                 <td></td>
+            </tr>
+            <tr>
+            <td><apex:inputField styleClass="textBox" value="{!Opportunity.Applicant_2_Email__c}" /></td>
+            <td></td>
+            </tr>
+            <tr>
+                <td><h2>Admin Name</h2></td>
+                 <td></td>
+            </tr>
+            <tr>
+            <td><apex:inputField styleClass="textBox" value="{!User.Name}"/></td>
+             <td></td>
+            </tr>
+            <tr>
+                <td><h2>Admin Email</h2></td>
+                <td></td>
+            </tr>
+            <tr>
+            <td><apex:inputField styleClass="textBox" value="{!User.Email}" /></td>
+            <td></td>
+            </tr>
+        </table>
+
+        <table class="top">
+            <tr>
+                <td><apex:commandButton styleClass="greenButton" action="{!createEnvelopeAndSignFirst}" value="DocuSign Now"/></td>
+            </tr>
+        </table>
+  </apex:form>
+
+</apex:page>
